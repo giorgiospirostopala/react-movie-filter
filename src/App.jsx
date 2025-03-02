@@ -19,8 +19,6 @@ function App() {
     }
   }, [selezionato]);
 
-  console.log("App renderizzata!");
-
   return (
     <div>
       <h1>FILTRA</h1>
