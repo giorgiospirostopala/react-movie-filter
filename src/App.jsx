@@ -1,10 +1,25 @@
 import React from "react"
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect } from 'react'
+import './index.css';
+
+import StampaFilm from './components/StampaFilm';
+import arrayFilm from "./data/film";
+
 
 function App() {
   const [selezionato, setSelezionato] = useState('');
+  const [filtrato, setFiltrato] = useState(arrayFilm);
+
+  useEffect(() => {
+    if (selezionato) {
+      setFiltrato(arrayFilm.filter((film) => film.genre === selezionato));
+    } else {
+      setFiltrato(arrayFilm);
+    }
+  }, [selezionato]);
+
+  console.log("App renderizzata!");
 
   return (
     <div>
@@ -16,7 +31,7 @@ function App() {
         <option value="Romantico">Romantico</option>
         <option value="Azione">Azione</option>
       </select>
-      <StampaFilm film={arrayFilm} />
+      <StampaFilm arrayFilm={filtrato} />
     </div>
   );
 }

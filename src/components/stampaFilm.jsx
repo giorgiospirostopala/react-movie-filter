@@ -1,6 +1,6 @@
 import React from 'react';
 
-function StampaFilm(arrayFilm) {
+function StampaFilm({ arrayFilm }) {
     return (
         <ul>
             {arrayFilm.map((film, i) => (
