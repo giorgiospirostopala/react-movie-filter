@@ -1,6 +1,6 @@
 import React from 'react';
 
-function stampaFilm(arrayFilm) {
+function StampaFilm(arrayFilm) {
     return (
         <ul>
             {arrayFilm.map((film, i) => (
@@ -10,4 +10,4 @@ function stampaFilm(arrayFilm) {
     );
 }
 
-export default stampaFilm;
+export default StampaFilm;
